@@ -43,7 +43,8 @@ export default [
         ]
       },
     ]
-  },{
+  },
+    {
     path:'/activePublic',component:activePublic,
     children:[
       { path: ''      , component: step1  },

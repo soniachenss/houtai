@@ -15,10 +15,219 @@
     <main>
       <!-- 左侧导航 -->
       <div class="main-left">
-        <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
-          <el-menu-item index="/activePublic" :class="{'isActive': active}">活动发布</el-menu-item>
-          <el-menu-item index="/activeManage" :class="{'isActive': !active}">活动管理</el-menu-item>
-        </el-menu>
+        <el-row>
+
+          <el-col :span="24">
+            <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
+              <el-menu-item index="/activePublic" :class="{'isActive': active}">学生信息</el-menu-item>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>助学补助</span>
+                </template>
+
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>学生素质</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>宿舍服务</span>
+                </template>
+
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>学工队伍</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>学生活动</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>后勤服务</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>学生党建</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+
+              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+                <template slot="title">
+                  <i class="el-icon-location"></i>
+                  <span>学生档案</span>
+                </template>
+                <el-menu-item-group>
+                <el-submenu index="1-1">
+                  <template slot="title">选项1</template>
+                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-2">
+                  <template slot="title">选项2</template>
+                  <el-menu-item index="1-2-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-3">
+                  <template slot="title">选项3</template>
+                  <el-menu-item index="1-3-1">选项1</el-menu-item>
+                </el-submenu>
+                <el-submenu index="1-4">
+                  <template slot="title">选项4</template>
+                  <el-menu-item index="1-4-1">选项1</el-menu-item>
+                </el-submenu>
+                </el-menu-item-group>
+              </el-submenu>
+            </el-menu>
+          </el-col>
+        </el-row>
+        <!--<el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">-->
+          <!--<el-menu-item index="/activePublic" :class="{'isActive': active}">学生信息</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">综合素质</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">助学补助</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">学生素质</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">宿舍服务</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">学工队伍</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">学生活动</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">后勤服务</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">学生党建</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" :class="{'isActive': !active}">学生档案</el-menu-item>-->
+        <!--</el-menu>-->
       </div>
 
       <!-- 右侧主内容区 -->
@@ -52,7 +261,12 @@
             this.$router.push('/activePublic');
         },
         methods: {
-
+            handleOpen(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClose(key, keyPath) {
+                console.log(key, keyPath);
+            }
         },
         watch: {
             '$route': function (to,from) {
@@ -82,12 +296,16 @@
     background-color: #20a0ff;
     color: #fff;
   }
-
+  .el-menu-item, .el-submenu__title{
+    color: #fff!important;
+  }
   /* 主内容区 */
   main{display: -webkit-box;display: -ms-flexbox;display: flex;  min-height: 800px;padding-top: 10px;  background-color: #FCFCFC;  }
   main .main-left{text-align: center;-webkit-box-flex: 0;-ms-flex: 0 0 200px;flex: 0 0 200px;}
   main .main-right{-webkit-box-flex:1;-ms-flex:1;flex:1; background-color: #fff; padding: 50px 70px; }
   main .el-menu{background-color: transparent!important;}
+  main .el-menu li{background-color: #20a0ff;
+    color: #fff;}
   /*  */
   .router-link{display:inline-block;width:100%;height:100%;text-align:center;color:#475669;text-decoration: none; }
   .is-active .router-link{color:#20a0ff; }
@@ -113,7 +331,7 @@
   }
 
   /* 导航栏菜单选中效果 */
-  .isActive{color: #20a0ff!important;}
+  .isActive{color: #fff!important;background-color: #66bdfd!important;}
   #app main .aside .is-active{color: #475669;}
 
   /* 卡片 */

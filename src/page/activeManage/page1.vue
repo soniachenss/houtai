@@ -27,6 +27,7 @@
     },
     methods: {
       routerTo: function (val) {
+          console.log(val);
         this.$router.push('/activeManage/detail/page1/step'+val);
       },
       handleCancel: function () {
