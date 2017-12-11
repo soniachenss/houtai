@@ -15,6 +15,12 @@ import page3 from './page/activeManage/page3.vue'
 import page4 from './page/activeManage/page4.vue'
 import page5 from './page/activeManage/page5.vue'
 
+import spage1 from './page/studentMessage/file1/page1.vue'
+import spage2 from './page/studentMessage/file2/page2.vue'
+import spage3 from './page/studentMessage/file3/page3.vue'
+import spage4 from './page/studentMessage/file4/page4.vue'
+import index5 from './page/studentMessage/index/page5.vue'
+
 
 export default [
   {
@@ -53,5 +59,15 @@ export default [
       { path: 'step3', component: step3  },
       { path: 'step4', component: step4  }
     ]
-  }
+  },
+    {
+        path:'/studentMessage',component:studentMessage,
+        children:[
+            { path: ''      , component: step1  },
+            { path: 'step1', component: step1  },
+            { path: 'step2', component: step2  },
+            { path: 'step3', component: step3  },
+            { path: 'step4', component: step4  }
+        ]
+    }
 ]
