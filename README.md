@@ -25,3 +25,8 @@ npm run dev
 npm run build
 ```
 
+
+#表格导出 安装依赖
+npm install -S file-saver xlsx
+npm install -D script-loader
+
