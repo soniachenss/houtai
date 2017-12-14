@@ -16,22 +16,17 @@
       <!-- 左侧导航 -->
       <div class="main-left">
         <el-row>
-
           <el-col :span="24">
             <el-menu router ref="navbar" default-active="/activePublic" class="el-menu-vertical-demo"  menu-trigger="click" @select="selectMenu" @open="openMenu" @close="closeMenu" :unique-opened="uniqueOpened" background-color="#545c64"
                      text-color="#fff"
                      active-text-color="#ffd04b">
-              <el-menu-item index="/activePublic" :class="{'isActive': active}">学生信息</el-menu-item>
-              <el-submenu index="/activeManage" :class="{'isActive': !active}">
-                <template slot="title">
+              <el-menu-item index="/activePublic" >学生信息</el-menu-item>
+              <el-submenu index="/activeManage">
+                <template slot="title" @click="selected">
                   <i class="el-icon-location"></i>
                   <span>助学补助</span>
                 </template>
-
-                <el-submenu index="/file1">
-                  <template slot="title">选项1</template>
-                  <el-menu-item index="/page1">选项1</el-menu-item>
-                </el-submenu>
+                <el-menu-item index="/file1">选项1</el-menu-item>
                 <el-submenu index="1-2">
                   <template slot="title">选项2</template>
                   <el-menu-item index="1-2-1">选项1</el-menu-item>
@@ -45,15 +40,15 @@
                   <el-menu-item index="1-4-1">选项1</el-menu-item>
                 </el-submenu>
               </el-submenu>
-              <el-submenu index="/activeManage2" :class="{'isActive': !active}">
+              <el-submenu index="/studentMessage">
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>学生素质</span>
                 </template>
                 <el-menu-item-group>
-                <el-submenu index="1-1">
+                <el-submenu index="fileOne">
                   <template slot="title">选项1</template>
-                  <el-menu-item index="1-1-1">选项1</el-menu-item>
+                  <el-menu-item index="fileOne/page1">选项1</el-menu-item>
                 </el-submenu>
                 <el-submenu index="1-2">
                   <template slot="title">选项2</template>
@@ -69,7 +64,7 @@
                 </el-submenu>
                 </el-menu-item-group>
               </el-submenu>
-              <el-submenu index="/activeManage3" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage3" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>宿舍服务</span>
@@ -94,7 +89,7 @@
                 </el-submenu>
                 </el-menu-item-group>
               </el-submenu>
-              <el-submenu index="/activeManage4" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage4" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>学工队伍</span>
@@ -118,7 +113,7 @@
                 </el-submenu>
                 </el-menu-item-group>
               </el-submenu>
-              <el-submenu index="/activeManage5" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage5" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>学生活动</span>
@@ -142,7 +137,7 @@
                 </el-submenu>
                 </el-menu-item-group>
               </el-submenu>
-              <el-submenu index="/activeManage6" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage6" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>后勤服务</span>
@@ -166,7 +161,7 @@
                 </el-submenu>
                 </el-menu-item-group>
               </el-submenu>
-              <el-submenu index="/activeManage7" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage7" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>学生党建</span>
@@ -191,7 +186,7 @@
                 </el-menu-item-group>
               </el-submenu>
 
-              <el-submenu index="/activeManage" :class="{'isActive': !active}">
+              <el-submenu index="/activeManage" >
                 <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>学生档案</span>
@@ -259,20 +254,17 @@
                  * 关闭位于当前打开菜单中该索引值之后的全部菜单
                  */
                     // 获取当前打开的所有菜单
-                let openMenu = this.$refs.navbar.openedMenus.concat([])
-                console.log(index);
+                let openMenu = this.$refs.navbar.openedMenus.concat([]);
                 // 获取点击菜单的父级index，如果当前点击的是根节点，则直接关闭所有打开菜单
                 let nowMenuPath = indexPath.length > 1 ? indexPath[indexPath.length-2] : ""
                 if(nowMenuPath){
                     // 获取父级index在数组中索引，关闭其后所有的菜单
-                    let menuIndex = openMenu.indexOf(nowMenuPath)
+                    let menuIndex = openMenu.indexOf(nowMenuPath);
                     openMenu = openMenu.slice(menuIndex+1)
                 }
-                console.log(JSON.stringify(openMenu));
                 // 关闭菜单
                 openMenu = openMenu.reverse();
                 openMenu.forEach((ele) => {
-                    console.log("hahaha");
                     this.$refs.navbar.closeMenu(ele)
                 })
 //                if(this.navMode == 'horizontal'){
@@ -291,14 +283,20 @@
             },
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
+            },
+            selected(){
+                this.addClass('is-active');
             }
 
         },
         watch: {
             '$route': function (to,from) {
+                console.log(to.path);
                 if(to.path == '/activePublic'){
                     this.active = true ;
                 }else if(to.path == '/activeManage'){
+                    this.active = false ;
+                }else if(to.path == '/studentMessage'){
                     this.active = false ;
                 }
             }
@@ -327,7 +325,7 @@
   main{display: -webkit-box;display: -ms-flexbox;display: flex;  min-height: 800px;padding-top: 10px;  background-color: #FCFCFC;  }
   main .main-left{text-align: center;-webkit-box-flex: 0;-ms-flex: 0 0 200px;flex: 0 0 200px;}
   main .main-right{-webkit-box-flex:1;-ms-flex:1;flex:1; background-color: #fff; padding: 50px 70px; }
-  main .el-menu{background-color: transparent!important;}
+  main .el-menu{background-color: #20a0ff!important;color: #fff!important;}
   /*main .el-menu li{background-color: #20a0ff;*/
     /*color: #fff;}*/
   /*  */
@@ -356,8 +354,67 @@
 
   /* 导航栏菜单选中效果 */
   .isActive{color: #fff!important;background-color: #66bdfd!important;}
+
+
+  .el-submenu .el-menu-item{
+    padding: 0 20px 0 45px!important;
+  }
+  .el-menu-item{
+    color: #fff!important;
+  }
+  main .el-menu,main .el-submenu .el-submenu__title span{
+    color: #fff;
+  }
+  .el-menu .el-menu-item.is-active, .el-menu-item.is-active{
+    color: #fff!important;
+    background-color: #66bdfd!important;
+  }
   #app main .aside .is-active{color: #475669;}
 
   /* 卡片 */
   .el-card{overflow: visible!important;}
+  .el-submenu__title span{
+    margin-left: -10px;
+  }
+  main .el-menu .el-submenu .el-menu,main .el-menu .el-submenu .el-menu .el-menu-item{
+    background-color: #fff!important;
+    color: #4d4d4d!important;
+  }
+  main .el-menu .el-submenu .el-menu li{
+    list-style: disc!important;
+  }
+  .el-menu-item-group{
+    color: #4d4d4d;
+  }
+  .el-menu-item-group__title{
+    padding-top: 0!important;
+  }
+
+  main .el-menu .el-submenu .is-active,
+  main .el-menu .el-submenu .el-menu-item.is-active,
+  main .el-menu .el-submenu .el-menu .is-active,
+  main .el-menu .el-submenu .el-menu .el-submenu .is-active{
+    color: #20a0ff!important;
+    background-color: #fff!important;
+  }
+  .el-menu .el-menu-item:hover,
+  .el-menu .el-submenu .el-submenu__title:hover{
+    color: #fff!important;background-color: #66bdfd!important;
+  }
+  .el-menu .el-submenu .el-menu .el-menu-item:hover,
+  .el-menu .el-submenu .el-menu .el-submenu .el-submenu__title:hover,
+  .el-menu .el-submenu .el-menu .el-submenu .el-menu .el-menu-item:hover
+  {
+    color: #20a0ff!important;
+    background-color: #fff!important;
+  }
+  .el-menu .el-submenu .el-menu .el-submenu .el-menu .el-menu-item{
+    padding-left: 60px!important;
+  }
+  .el-menu .el-submenu .el-menu{
+    border-right: 3px solid #20a0ff;
+  }
+  .el-menu .el-submenu .el-menu .el-submenu .el-menu{
+    border-right: none;
+  }
 </style>

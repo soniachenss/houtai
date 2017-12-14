@@ -1,5 +1,5 @@
 <template>
-    <div class="page1">
+    <div class="spage1">
         <p style="color: #999;font-size: 14px;">活动详情的按照内容板块可分别编辑，活动结束后不可编辑。</p>
         <el-tabs type="card" @tab-click="routerTo">
           <el-tab-pane label="活动信息"></el-tab-pane>
