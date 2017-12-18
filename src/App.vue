@@ -46,13 +46,13 @@
                   <span>学生素质</span>
                 </template>
                 <el-menu-item-group>
-                <el-submenu index="fileOne">
+                <el-submenu index="/fileOne">
                   <template slot="title">选项1</template>
-                  <el-menu-item index="fileOne/page1">选项1</el-menu-item>
+                  <el-menu-item index="/page1">选项1</el-menu-item>
                 </el-submenu>
-                <el-submenu index="fileTwo">
+                <el-submenu index="/fileTwo">
                   <template slot="title">选项2</template>
-                  <el-menu-item index="fileTwo/page2">选项1</el-menu-item>
+                  <el-menu-item index="/page2">选项1</el-menu-item>
                 </el-submenu>
                 <el-submenu index="1-3">
                   <template slot="title">选项3</template>
