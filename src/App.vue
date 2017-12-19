@@ -22,7 +22,7 @@
                      active-text-color="#ffd04b">
               <el-menu-item index="/activePublic" >学生信息</el-menu-item>
               <el-submenu index="/activeManage">
-                <template slot="title" @click="selected">
+                <template slot="title">
                   <i class="el-icon-location"></i>
                   <span>助学补助</span>
                 </template>
@@ -48,11 +48,11 @@
                 <el-menu-item-group>
                 <el-submenu index="/fileOne">
                   <template slot="title">选项1</template>
-                  <el-menu-item index="/page1">选项1</el-menu-item>
+                  <el-menu-item index="/fileOne/page1">选项1</el-menu-item>
                 </el-submenu>
                 <el-submenu index="/fileTwo">
                   <template slot="title">选项2</template>
-                  <el-menu-item index="/page2">选项1</el-menu-item>
+                  <el-menu-item index="/fileTwo/page2">选项1</el-menu-item>
                 </el-submenu>
                 <el-submenu index="1-3">
                   <template slot="title">选项3</template>
@@ -291,7 +291,6 @@
         },
         watch: {
             '$route': function (to,from) {
-                console.log(to.path);
                 if(to.path == '/activePublic'){
                     this.active = true ;
                 }else if(to.path == '/activeManage'){

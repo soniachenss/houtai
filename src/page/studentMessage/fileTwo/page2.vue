@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <div id="subOutputRank-print">
     <el-table
             :data="tableData"
             style="width: 100%">
@@ -19,8 +19,9 @@
               label="地址">
       </el-table-column>
     </el-table>
-
+      </div>
     <button @click="export2Excel">导出</button>
+    <button @click="printContent">打印</button>
   </div>
 
 </template>
