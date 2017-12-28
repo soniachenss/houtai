@@ -46,6 +46,15 @@
     }
   }
 
+
+  const fibonacci = ((meno = [0,1]) => {
+      const fib = (n) =>{
+          let result = meno[n];
+
+
+      }
+  })
+
 </script>
 
 <style>
