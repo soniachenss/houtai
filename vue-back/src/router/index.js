@@ -52,7 +52,8 @@ function routerMatch(permission, asyncRouter){
 }
 
 // 默认路由表，不需要权限
-const routes = [{
+const routes = [
+    {
         path: '/',
         // 重定向
         redirect: '/home'

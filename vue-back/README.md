@@ -1,7 +1,8 @@
 # Vue + ElementUI 后台管理系统框架
 
 >本框架为后台管理类系统解决方案，其中包含很多后台管理中的必备功能。当前版本仅供学习交流，框架中vue及webpack版本会随时更新，尽量采用平滑升级策略，修改部分全局或打包配置完成，如果更改过大，版本号将自动增加，并提供之前版本的release，所以如果注重稳定的话，请在生产环境中谨慎使用。
-
+https://github.com/harsima/vue-backend 
+http://blog.csdn.net/harsima/article/details/77949623
 ## **功能列表**
 - 登录登出
 - 菜单异步加载
@@ -80,6 +81,29 @@ npm run build --report
 ├── ...
 ```
 
+
+├── src
+│   ├── page
+│   │   ├── layout
+│   │   │   ├── header.vue  // 框架头
+│   │   │   ├── layout.vue  // 框架
+│   │   │   ├── navItem.vue // 导航菜单
+│   │   │   ├── nav.vue     // 导航菜单
+│   │   ├── home
+│   │   │   ├── home.vue    // 首页
+│   │   ├── error
+│   │   │   ├── error.vue   // 错误页面框架
+│   │   │   ├── 401.vue     
+│   │   │   ├── 403.vue
+│   │   │   ├── 404.vue
+│   │   ├── login
+│   │   │   ├── login.vue   // 登录页面
+
+
+vue-cli默认生成的项目中自带了babel-plugin-transform-runtime，其保证了一定的浏览器兼容性。但其存在两个问题：
+ 1.异步加载组件时，会产生 polyfill 代码冗余
+ 2.不支持对全局函数与实例方法的 polyfill
+介于以上两种缺点，我们需要增加babel-polyfill，同时删除babel-plugin-transform-runtime
 
 
 ## **更新计划**
