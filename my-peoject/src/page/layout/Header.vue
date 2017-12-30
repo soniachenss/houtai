@@ -15,11 +15,6 @@
                         </el-dropdown-menu>
                     </el-dropdown>
                 </li>
-                <li>
-                    <span class="lang" :class="{cur: lang=='zh'}" @click="changeLang('zh')">中</span>
-                    <span>/</span>
-                    <span class="lang" :class="{cur: lang=='en'}" @click="changeLang('en')">EN</span>
-                </li>
             </ul>
         </div>
         <el-dialog title="修改密码" :visible.sync="dialog.editPaw.show" :modal-append-to-body="false" custom-class="editPawDialog">
@@ -98,20 +93,20 @@ export default {
     computed: {
         ...mapState({
             username: state => state.user.name,
-            lang: state => state.lang
+//            lang: state => state.lang
         })
     },
     methods: {
         ...mapMutations({
-            toggleLang: 'changeLang'
+//            toggleLang: 'changeLang'
         }),
         ...mapActions({
             sysLogout: 'user/logout'
         }),
-        changeLang(val) {
-            if (val == this.lang) return
-            this.toggleLang(val)
-        },
+//        changeLang(val) {
+//            if (val == this.lang) return
+//            this.toggleLang(val)
+//        },
         userOperation(command){
             switch(command){
                 case 'logout': 

@@ -2,7 +2,7 @@
     <div class="login-page">
         <div class="login-area">
             <div class="logo">
-                <img src="@/assets/logo.png" alt="">
+                <img src="~sysStatic/images/logo.png" alt="">
             </div>
             <div class="form-group">
                 <el-form :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px">
@@ -20,10 +20,6 @@
                     <a class="btn-login" type="primary" @click="submitForm()">登录</a>
                 </el-form>
                 <div v-if="sys_error" class="err-msg">{{sys_error}}</div>
-            </div>
-            <div class="lang-toggle">
-                <span :class="{cur: lang=='zh'}" @click="changeLang('zh')">中</span> | 
-                <span :class="{cur: lang=='en'}" @click="changeLang('en')">En</span>
             </div>
             <div class="tip">
                 <p>当前登录结果随机。验证码随便填</p>
@@ -59,7 +55,7 @@
         },
         computed: {
             ...mapState({
-                lang: state => state.lang
+//                lang: state => state.lang
             }),
             captcha(){
                 if(this.validate) this.loginRules.captcha[0].required = true
@@ -68,7 +64,7 @@
         },
         methods: {
             ...mapMutations({
-                toggleLang: 'changeLang'
+//                toggleLang: 'changeLang'
             }),
             ...mapActions({
                 loginByEmail: 'user/loginByEmail'
@@ -97,10 +93,10 @@
                     }
                 });
             },
-            changeLang(val){
-                if(val == this.lang) return
-                this.toggleLang(val)
-            }
+//            changeLang(val){
+//                if(val == this.lang) return
+//                this.toggleLang(val)
+//            }
         }
     }
 </script>

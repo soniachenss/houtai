@@ -100,20 +100,6 @@ const asyncRouter = [
         },
         component: r => require.ensure([], () => r(require('../page/example/map/map')), 'example'),
     },
-    {
-        path: '/i18n',
-        meta:{
-            permission:[]
-        },
-        component: r => require.ensure([], () => r(require('../page/i18n/i18n')), 'i18n'),
-    },
-    {
-        path: '/theme',
-        meta:{
-            permission:[]
-        },
-        component: r => require.ensure([], () => r(require('../page/themeChange/themeChange')), 'theme'),
-    }
     
 ]
 

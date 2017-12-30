@@ -27,9 +27,9 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'sysStatic': resolve('src/resources'),
-      'sysComponents': resolve('src/components/customCom'),
-      'sysPage': resolve('src/page')
+        'sysStatic': resolve('src/resources'),
+        'sysComponents': resolve('src/components/customCom'),
+        'sysPage': resolve('src/page')
     }
   },
   module: {
